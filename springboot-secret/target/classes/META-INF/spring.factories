@@ -1,0 +1,1 @@
+# Auto Configureorg.springframework.boot.autoconfigure.EnableAutoConfiguration=\com.jzdata.aimedical.secret.config.ShiroAutoConfiguration,\com.jzdata.aimedical.secret.config.ShiroRedisAutoConfiguration

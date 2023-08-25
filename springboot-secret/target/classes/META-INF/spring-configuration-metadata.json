@@ -1,0 +1,202 @@
+{
+  "groups": [
+    {
+      "name": "security.shiro",
+      "type": "com.jzdata.aimedical.secret.config.ShiroProperties",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties"
+    },
+    {
+      "name": "security.shiro.redis",
+      "type": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties"
+    },
+    {
+      "name": "security.shiro.redis.cluster",
+      "type": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Cluster",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "sourceMethod": "getCluster()"
+    },
+    {
+      "name": "security.shiro.redis.pool",
+      "type": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Pool",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "sourceMethod": "getPool()"
+    },
+    {
+      "name": "security.shiro.redis.sentinel",
+      "type": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Sentinel",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "sourceMethod": "getSentinel()"
+    },
+    {
+      "name": "security.shiro.session",
+      "type": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroSession",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties",
+      "sourceMethod": "getSession()"
+    },
+    {
+      "name": "security.shiro.shiro-filter",
+      "type": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroFilter",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties",
+      "sourceMethod": "getShiroFilter()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "security.shiro.annotation-enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启shiro注解支持",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties"
+    },
+    {
+      "name": "security.shiro.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启shiro功能",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "security.shiro.filter-pattern",
+      "type": "java.util.Map<com.jzdata.aimedical.secret.consts.DefaultFilterType,java.util.List<java.lang.String>>",
+      "description": "Shiro请求拦截规则配置(shiro的拦截器规则，常用的anon和authc)",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties"
+    },
+    {
+      "name": "security.shiro.perms",
+      "type": "java.util.List<java.util.Map<java.lang.String,java.lang.String>>",
+      "description": "动态权限配置",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties"
+    },
+    {
+      "name": "security.shiro.redis.cluster.nodes",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Cluster"
+    },
+    {
+      "name": "security.shiro.redis.database",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "security.shiro.redis.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "security.shiro.redis.host",
+      "type": "java.lang.String",
+      "description": "带端口 如：127.0.0.1:6379",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties"
+    },
+    {
+      "name": "security.shiro.redis.key-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties"
+    },
+    {
+      "name": "security.shiro.redis.max-attempts",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "security.shiro.redis.password",
+      "type": "java.lang.String",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties"
+    },
+    {
+      "name": "security.shiro.redis.pool.max-active",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Pool",
+      "defaultValue": 8
+    },
+    {
+      "name": "security.shiro.redis.pool.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Pool",
+      "defaultValue": 8
+    },
+    {
+      "name": "security.shiro.redis.pool.max-wait",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Pool",
+      "defaultValue": -1
+    },
+    {
+      "name": "security.shiro.redis.pool.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Pool",
+      "defaultValue": 0
+    },
+    {
+      "name": "security.shiro.redis.port",
+      "type": "java.lang.String",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties"
+    },
+    {
+      "name": "security.shiro.redis.sentinel.master",
+      "type": "java.lang.String",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Sentinel"
+    },
+    {
+      "name": "security.shiro.redis.sentinel.nodes",
+      "type": "java.lang.String",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties$Sentinel"
+    },
+    {
+      "name": "security.shiro.redis.so-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "security.shiro.redis.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroRedisProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "security.shiro.session.delete-invalid-sessions",
+      "type": "java.lang.Boolean",
+      "description": "是否删除过期Session",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroSession",
+      "defaultValue": true
+    },
+    {
+      "name": "security.shiro.session.global-session-timeout",
+      "type": "java.lang.Long",
+      "description": "Shiro Session 过期时间（分钟）",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroSession",
+      "defaultValue": 30
+    },
+    {
+      "name": "security.shiro.session.session-id-cookie-enabled",
+      "type": "java.lang.Boolean",
+      "description": "session是否可以被保存到cookie中",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroSession",
+      "defaultValue": false
+    },
+    {
+      "name": "security.shiro.session.session-id-url-rewriting-enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否去掉URL中的JSESSIONID",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroSession",
+      "defaultValue": false
+    },
+    {
+      "name": "security.shiro.session.session-validation-scheduler-enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否定时检查Session",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroSession",
+      "defaultValue": true
+    },
+    {
+      "name": "security.shiro.shiro-filter.filters",
+      "type": "java.util.Map<com.jzdata.aimedical.secret.consts.DefaultFilterType,java.lang.Class<? extends javax.servlet.Filter>>",
+      "sourceType": "com.jzdata.aimedical.secret.config.ShiroProperties$ShiroFilter"
+    }
+  ],
+  "hints": []
+}

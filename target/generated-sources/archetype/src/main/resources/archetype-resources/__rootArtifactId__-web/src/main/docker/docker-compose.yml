@@ -1,0 +1,16 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+version: "2.4"
+services:
+  internetHospitalSupervisionPlatform:
+    container_name: internetHospitalSupervisionPlatform
+    build: ./
+    image: jdk8:aimedical
+    ports:
+      - 16969:6969
+    volumes:
+      - /root/internetHospitalSupervisionPlatform/upload:/root/internetHospitalSupervisionPlatform/upload
+      - /root/internetHospitalSupervisionPlatform/logs:/work/project/logs
+    command: java -jar internet-hospital-regulation.jar
+    restart: always

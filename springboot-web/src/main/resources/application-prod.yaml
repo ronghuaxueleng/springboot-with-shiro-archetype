@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/internet_hospital_regulation?zeroDateTimeBehavior=convertToNull&useSSL=true&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=Asia/Shanghai
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 123456

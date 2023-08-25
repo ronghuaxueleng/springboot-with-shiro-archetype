@@ -1,0 +1,54 @@
+spring:
+  jmx:
+    enabled: false
+  #出现错误时, 直接抛出异常
+  mvc:
+    throw-exception-if-no-handler-found: true
+  #不要为我们工程中的资源文件建立映射
+  resources:
+    add-mappings: false
+
+  #设置最大上传限制
+  servlet:
+    multipart:
+      max-file-size: 4096MB
+      max-request-size: 4096000MB
+
+  # 切换运行环境
+  #@profileActive@表示该属性值会在maven构建时被替换掉。
+  profiles:
+    active: @profileActive@
+
+# Server
+server:
+  port: 6969
+  servlet:
+    session:
+      timeout: 3600s
+
+#mybatis config 如果要使用多数据源 把这里注释即可 打开web模块config下的DataSourceMysqlConfig.java的注释
+mybatis:
+  type-aliases-package: com.jzdata.aimedical.entity
+  config-location: classpath:mybatis-config.xml
+
+security:
+  shiro:
+    redis:
+      enabled: false  # 是否开启Redis单独配置
+      host: 172.16.20.50
+      port: 6379
+      password:  # Redis服务器若设置密码，此处必须配置
+      timeout: 86400 #连接超时时间（毫秒）
+      keyPrefix: springboot
+    filterPattern:
+      anon:   # 不需要Shiro拦截的请求URL
+        - /api/test/**
+        - /api/user/login
+        - /doc.html
+        - /webjars/**
+        - /favicon.ico
+        - /swagger-resources/**
+        - /v2/api-docs
+        - /v2/api-docs-ext
+      authc:   # 需要Shiro拦截的请求URL
+#        - /**

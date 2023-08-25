@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 查询返回Map时设置值为null的字段也在结果集中 -->
+		<setting name="callSettersOnNulls" value="true"/>
+		<!-- 默认枚举转换器 -->
+		<setting name="defaultEnumTypeHandler" value="com.jzdata.aimedical.enumhandle.AutoEnumTypeHandler"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	<typeAliases>
+		<typeAlias alias="Integer" type="java.lang.Integer"/>
+		<typeAlias alias="Long" type="java.lang.Long"/>
+		<typeAlias alias="HashMap" type="java.util.HashMap"/>
+		<typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap"/>
+		<typeAlias alias="ArrayList" type="java.util.ArrayList"/>
+		<typeAlias alias="LinkedList" type="java.util.LinkedList"/>
+		<typeAlias alias="String" type="java.lang.String"/>
+		<!-- 设置别名 -->
+		<package name="com.jzdata.aimedical.entity"/>
+	</typeAliases>
+</configuration>

@@ -1,0 +1,35 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+spring:
+  jmx:
+    enabled: false
+  ${symbol_pound}出现错误时, 直接抛出异常
+  mvc:
+    throw-exception-if-no-handler-found: true
+  ${symbol_pound}不要为我们工程中的资源文件建立映射
+  resources:
+    add-mappings: false
+
+  ${symbol_pound}设置最大上传限制
+  servlet:
+    multipart:
+      max-file-size: 4096MB
+      max-request-size: 4096000MB
+
+  ${symbol_pound} 切换运行环境
+  ${symbol_pound}@profileActive@表示该属性值会在maven构建时被替换掉。
+  profiles:
+    active: @profileActive@
+
+${symbol_pound} Server
+server:
+  port: 6969
+  servlet:
+    session:
+      timeout: 3600s
+
+${symbol_pound}mybatis config 因为配置了多数据源 所以注释了
+${symbol_pound}mybatis:
+${symbol_pound}  type-aliases-package: ${package}.entity
+${symbol_pound}  config-location: classpath:mybatis-config.xml

@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  app:
+    container_name: springboot
+    build: ./
+    image: jdk8:aimedical
+    ports:
+      - 16969:6969
+    volumes:
+      - /root/springboot/upload:/root/springboot/upload
+      - /root/springboot/logs:/work/project/logs
+    command: java -jar springboot.jar
+    restart: always
